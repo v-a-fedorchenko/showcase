@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class ShowcaseApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void contextLoads() {  //default test from Spring Boot
 	}
 
 }
