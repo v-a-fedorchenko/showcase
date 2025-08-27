@@ -25,3 +25,13 @@ infrastructure, and writing code and tests.
 - I add Spotbugs plugin for static code analysis
 - I add SonarLint plugin for static code analysis within IDE
 - I would consider using Error Pron and SonarQube for bigger projects
+
+## 4. Version Control & Git Workflow
+
+- I use Git for version control
+- I use a default .gitignore file from Spring Initializr
+- I use GitHub for hosting the repository
+- I use a trunk-based development workflow for smaller projects
+- I would consider using GitFlow for bigger projects with more contributors
+- I use conventional commits for commit messages
+- I use simple CI for basic checks (e.g. build, test, lint)
