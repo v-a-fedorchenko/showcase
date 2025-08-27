@@ -35,3 +35,12 @@ infrastructure, and writing code and tests.
 - I would consider using GitFlow for bigger projects with more contributors
 - I use conventional commits for commit messages
 - I use simple CI for basic checks (e.g. build, test, lint)
+
+## 5. Domain Modeling & Architecture Design
+
+- I use DDD for domain modeling
+- I use Microservices architecture for scaling
+- I use one microservice per bounded context
+- Within each application, I use one module per aggregate
+- In this showcase project, for simplicity, I use very few aggregates
+- Most of the work here is being done externally and will be documented in the next section
