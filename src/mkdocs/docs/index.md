@@ -6,4 +6,4 @@ Repository location: [here](https://github.com/v-a-fedorchenko/showcase)
 
 ## Reference Diagrams
 
-![Alt Text](../../diagrams/diagram-example.puml)
+![Alt Text](../diagrams/diagram-example.puml)
