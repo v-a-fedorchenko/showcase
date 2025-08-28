@@ -2,7 +2,7 @@
 
 ## Reference Diagrams
 
-![Alt Text](../diagrams/my-diagram.puml)
+![Alt Text](../diagrams/diagram-example.puml)
 
 ## Inline Diagrams
 
