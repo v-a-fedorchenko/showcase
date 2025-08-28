@@ -3,10 +3,8 @@ nav:
   - Home: index.md
   - Roadmap: roadmap.md
   - Architecture: architecture.md
-  - Diagrams: diagrams-page.md
 plugins:
   - search
-  - plantuml-colocator
   - plantuml:
       puml_url: https://www.plantuml.com/plantuml/
 theme:

@@ -25,7 +25,6 @@ jobs:
           pip install plantuml
           pip install mkdocs mkdocs-material
           pip install mkdocs_puml
-          pip install mkdocs-plantuml
 
       - name: Build MkDocs site
         run: |
