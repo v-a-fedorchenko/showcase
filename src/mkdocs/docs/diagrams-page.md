@@ -1,9 +1,5 @@
 # Diagrams Examples
 
-## Reference Diagrams
-
-![Alt Text](../../diagrams/diagram-example.puml)
-
 ## Inline Diagrams
 
 ```puml
