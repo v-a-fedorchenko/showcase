@@ -1,21 +1,5 @@
-# Medium
+# Project Documentation
 
-You may see the overall process on the diagram below
+This repository demonstrates my approach to setting up a development environment, writing code, and creating tests.
 
-## 1
-
-![Alt Text](../diagrams/my-diagram.puml)
-
-## 2
-
-```puml
-@startuml sign_in_sequence  
-  
-title "Sign In Sequence Diagram"  
-  
-actor User  
-participant "@action authenticate" as authenticate
-entity User as UserModel  
-  
-User -> authenticate: {"email": email, "password": password}
-```
+Repository location:[here](https://github.com/v-a-fedorchenko/showcase)
