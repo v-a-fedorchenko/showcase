@@ -4,7 +4,7 @@ You may see the overall process on the diagram below
 
 ## 1
 
-![Alt Text](my-diagram.puml)
+![Alt Text](../diagrams/my-diagram.puml)
 
 ## 2
 
