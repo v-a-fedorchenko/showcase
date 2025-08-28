@@ -1,8 +1,0 @@
-site_name: Showcase
-plugins:
-  - search
-  - plantuml-colocator
-  - plantuml:
-      puml_url: https://www.plantuml.com/plantuml/
-theme:
-  name: material
