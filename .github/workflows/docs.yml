@@ -3,7 +3,7 @@ name: Deploy Docs
 on:
   push:
     branches:
-      - test-docs
+      - main
 
 permissions:
   contents: write

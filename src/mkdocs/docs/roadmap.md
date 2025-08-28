@@ -44,4 +44,4 @@
 
 - I use MkDocs for documentation
 - I use a simple CI for publishing the documentation to GitHub Pages
-- 
+- I use puml plugin for diagrams
