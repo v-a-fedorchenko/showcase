@@ -24,7 +24,9 @@ jobs:
           pip install mkdocs-plantuml || true
 
       - name: Build MkDocs site
-        run: mkdocs build --clean
+        run: |
+          cd src/mkdocs
+          mkdocs build --clean
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
