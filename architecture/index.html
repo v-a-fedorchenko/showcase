@@ -12,8 +12,6 @@
         <link rel="prev" href="../roadmap/">
       
       
-        <link rel="next" href="../diagrams-page/">
-      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
@@ -251,6 +249,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -263,28 +274,34 @@
 
       </a>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../diagrams-page/" class="md-nav__link">
         
-  
-  
-  <span class="md-ellipsis">
-    Diagrams
-    
-  </span>
-  
 
-      </a>
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inline-diagrams-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inline Diagrams Example
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -309,6 +326,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inline-diagrams-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inline Diagrams Example
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -324,6 +358,8 @@
 
 
 <h1 id="architecture">Architecture</h1>
+<h2 id="inline-diagrams-example">Inline Diagrams Example</h2>
+<div class='puml-container'><div class="puml light" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="248px" preserveAspectRatio="xMidYMid meet" style="width:440px;height:248px;background:#FFFFFF;" version="1.1" viewBox="0 0 440 248" width="440px" zoomAndPan="magnify" class="diagram"><title>Sign In Sequence Diagram</title><defs/><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="208.3184" x="117.5969" y="27.9951">Sign In Sequence Diagram</text><g><title>User</title><rect fill="#000000" fill-opacity="0.00000" height="49.1328" width="8" x="19.9551" y="118.5938"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="23" x2="23" y1="118.5938" y2="167.7266"/></g><g><title>.action authenticate</title><rect fill="#000000" fill-opacity="0.00000" height="49.1328" width="8" x="305.3008" y="118.5938"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="308.9995" x2="308.9995" y1="118.5938" y2="167.7266"/></g><g><title>User</title><rect fill="#000000" fill-opacity="0.00000" height="49.1328" width="8" x="416.5571" y="118.5938"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5,5;" x1="419.6021" x2="419.6021" y1="118.5938" y2="167.7266"/></g><g class="participant participant-head" data-participant="User"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31.9102" x="5" y="115.292">User</text><ellipse cx="23.9551" cy="50.7969" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M23.9551,58.7969 L23.9551,85.7969 M10.9551,66.7969 L36.9551,66.7969 M23.9551,85.7969 L10.9551,100.7969 M23.9551,85.7969 L36.9551,100.7969" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-tail" data-participant="User"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31.9102" x="5" y="179.7217">User</text><ellipse cx="23.9551" cy="191.5234" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M23.9551,199.5234 L23.9551,226.5234 M10.9551,207.5234 L36.9551,207.5234 M23.9551,226.5234 L10.9551,241.5234 M23.9551,226.5234 L36.9551,241.5234" fill="none" style="stroke:#181818;stroke-width:0.5;"/></g><g class="participant participant-head" data-participant="authenticate"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="164.6025" x="226.9995" y="87.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150.6025" x="233.9995" y="107.292">@action authenticate</text></g><g class="participant participant-tail" data-participant="authenticate"><rect fill="#E2E2F0" height="30.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="164.6025" x="226.9995" y="166.7266"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150.6025" x="233.9995" y="186.7217">@action authenticate</text></g><g class="participant participant-head" data-participant="UserModel"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31.9102" x="401.6021" y="115.292">User</text><ellipse cx="420.5571" cy="86.2969" fill="#E2E2F0" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="408.5571" x2="432.5571" y1="100.2969" y2="100.2969"/></g><g class="participant participant-tail" data-participant="UserModel"><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31.9102" x="401.6021" y="179.7217">User</text><ellipse cx="420.5571" cy="199.0234" fill="#E2E2F0" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="408.5571" x2="432.5571" y1="213.0234" y2="213.0234"/></g><g class="message" data-participant-1="User" data-participant-2="authenticate"><polygon fill="#181818" points="297.3008,145.7266,307.3008,149.7266,297.3008,153.7266,301.3008,149.7266" style="stroke:#181818;stroke-width:1;"/><line style="stroke:#181818;stroke-width:1;" x1="23.9551" x2="303.3008" y1="149.7266" y2="149.7266"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="261.3457" x="30.9551" y="144.6606">{"email": email, "password": password}</text></g></g></svg></div><div class="puml dark" style=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" data-diagram-type="SEQUENCE" height="248px" preserveAspectRatio="xMidYMid meet" style="width:440px;height:248px;background:#1B1B1B;" version="1.1" viewBox="0 0 440 248" width="440px" zoomAndPan="magnify" class="diagram"><title>Sign In Sequence Diagram</title><defs/><g><rect fill="#1B1B1B" height="248" style="stroke:none;stroke-width:1;" width="440" x="0" y="0"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="208.3184" x="117.5969" y="27.9951">Sign In Sequence Diagram</text><g><title>User</title><rect fill="#000000" fill-opacity="0.00000" height="49.1328" width="8" x="19.9551" y="118.5938"/><line style="stroke:#E7E7E7;stroke-width:0.5;stroke-dasharray:5,5;" x1="23" x2="23" y1="118.5938" y2="167.7266"/></g><g><title>.action authenticate</title><rect fill="#000000" fill-opacity="0.00000" height="49.1328" width="8" x="305.3008" y="118.5938"/><line style="stroke:#E7E7E7;stroke-width:0.5;stroke-dasharray:5,5;" x1="308.9995" x2="308.9995" y1="118.5938" y2="167.7266"/></g><g><title>User</title><rect fill="#000000" fill-opacity="0.00000" height="49.1328" width="8" x="416.5571" y="118.5938"/><line style="stroke:#E7E7E7;stroke-width:0.5;stroke-dasharray:5,5;" x1="419.6021" x2="419.6021" y1="118.5938" y2="167.7266"/></g><g class="participant participant-head" data-participant="User"><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31.9102" x="5" y="115.292">User</text><ellipse cx="23.9551" cy="50.7969" fill="#222222" rx="8" ry="8" style="stroke:#E7E7E7;stroke-width:0.5;"/><path d="M23.9551,58.7969 L23.9551,85.7969 M10.9551,66.7969 L36.9551,66.7969 M23.9551,85.7969 L10.9551,100.7969 M23.9551,85.7969 L36.9551,100.7969" fill="none" style="stroke:#E7E7E7;stroke-width:0.5;"/></g><g class="participant participant-tail" data-participant="User"><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31.9102" x="5" y="179.7217">User</text><ellipse cx="23.9551" cy="191.5234" fill="#222222" rx="8" ry="8" style="stroke:#E7E7E7;stroke-width:0.5;"/><path d="M23.9551,199.5234 L23.9551,226.5234 M10.9551,207.5234 L36.9551,207.5234 M23.9551,226.5234 L10.9551,241.5234 M23.9551,226.5234 L36.9551,241.5234" fill="none" style="stroke:#E7E7E7;stroke-width:0.5;"/></g><g class="participant participant-head" data-participant="authenticate"><rect fill="#222222" height="30.2969" rx="2.5" ry="2.5" style="stroke:#E7E7E7;stroke-width:0.5;" width="164.6025" x="226.9995" y="87.2969"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150.6025" x="233.9995" y="107.292">@action authenticate</text></g><g class="participant participant-tail" data-participant="authenticate"><rect fill="#222222" height="30.2969" rx="2.5" ry="2.5" style="stroke:#E7E7E7;stroke-width:0.5;" width="164.6025" x="226.9995" y="166.7266"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="150.6025" x="233.9995" y="186.7217">@action authenticate</text></g><g class="participant participant-head" data-participant="UserModel"><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31.9102" x="401.6021" y="115.292">User</text><ellipse cx="420.5571" cy="86.2969" fill="#222222" rx="12" ry="12" style="stroke:#E7E7E7;stroke-width:0.5;"/><line style="stroke:#E7E7E7;stroke-width:0.5;" x1="408.5571" x2="432.5571" y1="100.2969" y2="100.2969"/></g><g class="participant participant-tail" data-participant="UserModel"><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31.9102" x="401.6021" y="179.7217">User</text><ellipse cx="420.5571" cy="199.0234" fill="#222222" rx="12" ry="12" style="stroke:#E7E7E7;stroke-width:0.5;"/><line style="stroke:#E7E7E7;stroke-width:0.5;" x1="408.5571" x2="432.5571" y1="213.0234" y2="213.0234"/></g><g class="message" data-participant-1="User" data-participant-2="authenticate"><polygon fill="#E7E7E7" points="297.3008,145.7266,307.3008,149.7266,297.3008,153.7266,301.3008,149.7266" style="stroke:#E7E7E7;stroke-width:1;"/><line style="stroke:#E7E7E7;stroke-width:1;" x1="23.9551" x2="303.3008" y1="149.7266" y2="149.7266"/><text fill="#FFFFFF" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="261.3457" x="30.9551" y="144.6606">{"email": email, "password": password}</text></g></g></svg></div></div>
 
 
 
