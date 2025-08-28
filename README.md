@@ -44,3 +44,9 @@ infrastructure, and writing code and tests.
 - Within each application, I use one module per aggregate
 - In this showcase project, for simplicity, I use very few aggregates
 - Most of the work here is being done externally and will be documented in the next section
+
+## 6. Documentation & Knowledge Sharing
+
+- I use MkDocs for documentation
+- I use a simple CI for publishing the documentation to GitHub Pages
+- 
