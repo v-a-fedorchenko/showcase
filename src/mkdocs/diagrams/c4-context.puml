@@ -1,0 +1,38 @@
+@startuml C4_Context_ECommerce
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+' Diagram Metadata
+title System Context diagram for E-commerce Platform
+LAYOUT_WITH_LEGEND()
+
+' Actors
+Person(customer, "Customer", "A person who buys products.")
+Person(admin, "Administrator", "Manages products, orders, and the online store.")
+
+' The System in Scope
+System(ecommerce_system, "E-commerce Platform", "Allows customers to browse and purchase products online.")
+
+' External Systems
+System_Ext(payment_gateway, "Payment Gateway", "Processes customer payments (e.g., Stripe, PayPal).")
+System_Ext(shipping_service, "Shipping Service", "Handles order fulfillment and shipping logistics (e.g., DHL, FedEx).")
+System_Ext(notification_service, "Notification Service", "Sends notifications via Email and SMS (e.g., SendGrid, Twilio).")
+System_Ext(identity_provider, "Identity Provider", "Handles user authentication (e.g., Keycloak, Google Sign-In).")
+
+' Relationships
+' Customer interactions
+Rel(customer, ecommerce_system, "Browses products and places orders", "HTTPS")
+Rel(customer, ecommerce_system, "Manages account and views order history", "HTTPS")
+Rel(ecommerce_system, identity_provider, "Delegates user sign-in", "OAuth2/OIDC")
+
+' Administrator interactions
+Rel(admin, ecommerce_system, "Manages products, inventory, and orders", "HTTPS")
+
+' System to External System interactions
+Rel(ecommerce_system, payment_gateway, "Processes payments for orders", "API")
+Rel(ecommerce_system, shipping_service, "Schedules shipments for paid orders", "API")
+Rel(ecommerce_system, notification_service, "Sends notifications (Email, SMS)", "API")
+
+' External System to Customer interaction (indirect)
+Rel(notification_service, customer, "Delivers notifications to")
+
+@enduml

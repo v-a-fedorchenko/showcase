@@ -1,0 +1,78 @@
+@startuml C4_Container_ECommerce
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title Container diagram for E-commerce Platform (Aligned with Context Diagram)
+LAYOUT_WITH_LEGEND()
+
+' Actors
+Person(customer, "Customer", "Browses products and places orders.")
+Person(admin, "Administrator", "Manages products, orders, and the online store.")
+
+' External Systems
+System_Ext(payment_gateway, "Payment Gateway", "Processes payments (e.g., Stripe, PayPal).")
+System_Ext(shipping_service, "Shipping Service", "Handles order fulfillment and shipping logistics.")
+System_Ext(notification_service, "Notification Service", "Sends notifications via Email and SMS.")
+System_Ext(identity_provider, "Identity Provider", "Handles authentication and authorization (OIDC, SSO).")
+
+' Event Bus
+ContainerQueue(event_bus, "Event Bus", "Apache Kafka", "Handles async events between services.")
+
+' System Boundary
+System_Boundary(ecommerce_system, "E-commerce Platform") {
+
+    ' Frontend
+    Container(web_ui, "Web UI", "React / Next.js", "Provides e-commerce functionality to customers and admins.")
+    Container(api_gateway, "API Gateway", "Spring Cloud Gateway", "Routes incoming requests to services and validates JWT tokens.")
+
+    ' --- Store Service (Portfolio Focus) ---
+    Container_Boundary(store_bc, "Store Bounded Context") {
+        Container(store_service, "Store Service", "Spring Boot / Java", "Manages product catalog, categories, pricing, and shopping lists/carts. Participates in choreography-based sagas.")
+        ContainerDb(product_db, "Product DB", "MongoDB", "Stores product catalog and flexible product attributes.")
+        ContainerDb(store_cache, "Store Cache", "Redis", "Caches frequently accessed product data.")
+        ContainerDb(carts_db, "Carts DB", "PostgreSQL", "Stores shopping lists and carts for customers.")
+    }
+
+    ' --- Order Service ---
+    Container_Boundary(order_bc, "Order Bounded Context") {
+        Container(order_service, "Order Service", "Spring Boot / Java", "Manages checkout and completed order history.")
+        ContainerDb(order_db, "Order DB", "PostgreSQL", "Stores completed orders.")
+    }
+
+    ' --- Service to Service Communication ---
+    Rel(store_service, order_service, "Queries order info for validation", "HTTP/REST")
+
+}
+
+' --- Relationships ---
+
+' User interactions
+Rel(customer, web_ui, "Uses", "HTTPS")
+Rel(admin, web_ui, "Uses", "HTTPS")
+
+' UI -> API Gateway -> Services
+Rel(web_ui, api_gateway, "Makes API calls", "HTTPS/JSON")
+Rel(api_gateway, store_service, "Routes store requests", "HTTP/REST")
+Rel(api_gateway, order_service, "Routes order requests", "HTTP/REST")
+
+' Authentication
+Rel(web_ui, identity_provider, "Authenticates user via", "OIDC Redirect")
+Rel(api_gateway, identity_provider, "Validates JWT tokens", "HTTPS")
+
+' Store Service -> Databases
+Rel(store_service, product_db, "Reads/Writes product catalog", "MongoDB driver")
+Rel(store_service, store_cache, "Reads/Writes cached product data", "Redis client")
+Rel(store_service, carts_db, "Reads/Writes shopping lists and carts", "JDBC")
+
+' Order Service -> Database
+Rel(order_service, order_db, "Reads/Writes completed orders", "JDBC")
+
+' Async Event Flows via Kafka
+Rel(store_service, event_bus, "Publishes 'Product Updated' / consumes 'Order Placed' events (Saga)", "Async")
+Rel(order_service, event_bus, "Publishes 'Order Placed' events", "Async")
+Rel(event_bus, notification_service, "Delivers notifications", "Async")
+
+' Payment and Shipping (external interactions)
+Rel(order_service, payment_gateway, "Processes payment for orders", "API")
+Rel(order_service, shipping_service, "Schedules shipment for paid orders", "API")
+
+@enduml
